@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://de6n5un4txtrt"]
+
+[ext_resource type="Texture2D" uid="uid://c05w60jhfqako" path="res://game_stuff/Assets/Game Design Orbit Game_ Body Guards.png" id="1_j2vs3"]
+[ext_resource type="Script" uid="uid://csokiqg5sounq" path="res://game_stuff/Code/body_guard.gd" id="1_qnro6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnro6"]
+size = Vector2(82, 123)
+
+[node name="BodyGuard" type="CharacterBody2D"]
+script = ExtResource("1_qnro6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j2vs3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_qnro6")

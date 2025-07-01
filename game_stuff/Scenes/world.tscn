@@ -1,5 +1,13 @@
-[gd_scene format=3 uid="uid://dbqwug5lves1e"]
+[gd_scene load_steps=3 format=3 uid="uid://dbqwug5lves1e"]
+
+[ext_resource type="PackedScene" uid="uid://dwy1xy6m2vd8r" path="res://game_stuff/Scenes/kyle.tscn" id="1_51tv8"]
+[ext_resource type="PackedScene" uid="uid://de6n5un4txtrt" path="res://game_stuff/Scenes/body_guard.tscn" id="2_jnm5b"]
 
 [node name="World" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Kyle" parent="." instance=ExtResource("1_51tv8")]
+
+[node name="Camera2D" type="Camera2D" parent="Kyle"]
+
+[node name="BodyGuard" parent="." instance=ExtResource("2_jnm5b")]
+position = Vector2(0, -314)
