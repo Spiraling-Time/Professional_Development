@@ -7,3 +7,5 @@
 [node name="Node2D" type="Node2D" parent="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="Node2D/Node2D"]
+
+[node name="Node2D" type="Node2D" parent="Node2D/Node2D/Node2D"]
