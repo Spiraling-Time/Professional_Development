@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr8dqiw7a6ve5"]
+
+[ext_resource type="PackedScene" uid="uid://de6n5un4txtrt" path="res://game_stuff/Scenes/body_guard.tscn" id="1_1khxw"]
+[ext_resource type="Script" uid="uid://dilbtg6tycu30" path="res://game_stuff/Code/body_guard_orbit.gd" id="1_tqh8g"]
+
+[node name="BodyGuard_Orbit" type="Node2D"]
+script = ExtResource("1_tqh8g")
+
+[node name="BodyGuard1" parent="." instance=ExtResource("1_1khxw")]
+position = Vector2(-350, 0)
+scale = Vector2(-1, 1)
+
+[node name="BodyGuard2" parent="." instance=ExtResource("1_1khxw")]
+position = Vector2(350, 0)
