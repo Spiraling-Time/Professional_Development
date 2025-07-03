@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwy1xy6m2vd8r"]
 
-[ext_resource type="Texture2D" uid="uid://dmqky6vpa40w8" path="res://game_stuff/Assets/sprite_sheet (20).png" id="1_fl6hr"]
+[ext_resource type="Texture2D" uid="uid://dmqky6vpa40w8" path="res://game_stuff/Assets/kyle_sprite_sheet.png" id="1_fl6hr"]
 [ext_resource type="Script" uid="uid://kiwepakr14nd" path="res://game_stuff/Code/kyle.gd" id="1_oty1q"]
 
 [node name="Kyle" type="CharacterBody2D"]
