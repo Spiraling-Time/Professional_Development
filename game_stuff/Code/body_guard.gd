@@ -1,1 +1,6 @@
-extends CharacterBody2D
+extends Area2D
+
+func _physics_process(delta: float) -> void:
+	for bodies in get_overlapping_bodies():
+		if bodies.has_method("turn_away") and bodies.mode == "MOVE": bodies.turn_away()
+		

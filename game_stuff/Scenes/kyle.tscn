@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dmqky6vpa40w8" path="res://game_stuff/Assets/kyle_sprite_sheet.png" id="1_fl6hr"]
 [ext_resource type="Script" uid="uid://kiwepakr14nd" path="res://game_stuff/Code/kyle.gd" id="1_oty1q"]
 
-[node name="Kyle" type="CharacterBody2D"]
+[node name="Kyle" type="Node2D"]
 script = ExtResource("1_oty1q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
