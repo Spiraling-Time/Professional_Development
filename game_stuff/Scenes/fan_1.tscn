@@ -98,6 +98,7 @@ _data = {
 size = Vector2(48, 67)
 
 [node name="Fan1" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_1u1xs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

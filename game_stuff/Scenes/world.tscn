@@ -28,7 +28,59 @@ shape = SubResource("CircleShape2D_yya4n")
 position = Vector2(-1619, -321)
 scale = Vector2(-1, 1)
 
+[node name="Fan7" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-2014, 335)
+scale = Vector2(-1, 1)
+
+[node name="Fan8" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-1238, 1055)
+scale = Vector2(-1, 1)
+
+[node name="Fan9" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-1202, -605)
+scale = Vector2(-1, 1)
+
+[node name="Fan10" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-2350, -302)
+scale = Vector2(-1, 1)
+
+[node name="Fan11" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-2483, 57)
+scale = Vector2(-1, 1)
+
+[node name="Fan12" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-2911, -174)
+scale = Vector2(-1, 1)
+
+[node name="Fan13" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-3280, -80)
+scale = Vector2(-1, 1)
+
+[node name="Fan14" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-1871, 3294)
+scale = Vector2(-1, 1)
+
+[node name="Fan15" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-2989, 3890)
+scale = Vector2(-1, 1)
+
+[node name="Fan16" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(-4254, 3864)
+scale = Vector2(-1, 1)
+
 [node name="Fan2" parent="Spawner" instance=ExtResource("3_jnm5b")]
 position = Vector2(1709, 897)
+
+[node name="Fan3" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(1501, 224)
+
+[node name="Fan4" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(1137, -215)
+
+[node name="Fan5" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(1212, -1096)
+
+[node name="Fan6" parent="Spawner" instance=ExtResource("3_jnm5b")]
+position = Vector2(1201, 1089)
 
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]

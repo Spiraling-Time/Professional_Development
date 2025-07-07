@@ -64,6 +64,8 @@ _data = {
 size = Vector2(82, 137)
 
 [node name="BodyGuard" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_qnro6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

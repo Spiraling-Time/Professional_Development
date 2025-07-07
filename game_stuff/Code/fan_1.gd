@@ -28,8 +28,8 @@ func _physics_process(delta: float) -> void:
 func turn_away():
 	mode = "RETREAT"
 	scale.x = -1
-
-
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
 func move():
 	velocity = dir*speed
 	move_and_slide()
