@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmqky6vpa40w8"
-path="res://.godot/imported/kyle_sprite_sheet.png-b39755a70a0385c2e449c26295675807.ctex"
+uid="uid://c7badmr6ju781"
+path="res://.godot/imported/fan1spritesheet.png-a168ff1d814095f00b9c8ac1e84c40e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/kyle_sprite_sheet.png"
-dest_files=["res://.godot/imported/kyle_sprite_sheet.png-b39755a70a0385c2e449c26295675807.ctex"]
+source_file="res://game_stuff/Assets/fan1spritesheet.png"
+dest_files=["res://.godot/imported/fan1spritesheet.png-a168ff1d814095f00b9c8ac1e84c40e5.ctex"]
 
 [params]
 

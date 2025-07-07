@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	elif mode == "RETREAT":
 		$AnimationPlayer.play("Retreat")
 		dir = (global_position-$"../../Kyle".global_position).normalized()
-	
+
 	elif mode == "CELEBRATE":
 		$AnimationPlayer.play("Celebrate")
 
@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 func turn_away():
 	mode = "RETREAT"
 	scale.x = -1
+
 
 func move():
 	velocity = dir*speed

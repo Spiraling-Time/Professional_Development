@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c05w60jhfqako"
-path="res://.godot/imported/Game Design Orbit Game_ Body Guards.png-ce1d091774234a6b0b8650839fc414ce.ctex"
+uid="uid://dibcqleg7st51"
+path="res://.godot/imported/bodygaurdspritesheet.png-028a711c187e87ac11e2d236052b5887.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/Game Design Orbit Game_ Body Guards.png"
-dest_files=["res://.godot/imported/Game Design Orbit Game_ Body Guards.png-ce1d091774234a6b0b8650839fc414ce.ctex"]
+source_file="res://game_stuff/Assets/bodygaurdspritesheet.png"
+dest_files=["res://.godot/imported/bodygaurdspritesheet.png-028a711c187e87ac11e2d236052b5887.ctex"]
 
 [params]
 

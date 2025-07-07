@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dwkkknsbystxb"]
 
 [ext_resource type="Script" uid="uid://fedfjl7iyjcg" path="res://game_stuff/Code/fan_1.gd" id="1_1u1xs"]
-[ext_resource type="Texture2D" uid="uid://bxaw8f2j30n1s" path="res://game_stuff/Assets/fan1_sprite_sheet.png" id="2_thxo3"]
+[ext_resource type="Texture2D" uid="uid://c7badmr6ju781" path="res://game_stuff/Assets/fan1spritesheet.png" id="2_1u1xs"]
 
 [sub_resource type="Animation" id="Animation_thxo3"]
 resource_name = "Happy"
@@ -101,7 +101,7 @@ size = Vector2(48, 67)
 script = ExtResource("1_1u1xs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_thxo3")
+texture = ExtResource("2_1u1xs")
 vframes = 8
 frame = 1
 
