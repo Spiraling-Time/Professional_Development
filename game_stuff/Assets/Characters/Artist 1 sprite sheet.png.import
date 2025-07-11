@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dibcqleg7st51"
-path="res://.godot/imported/bodygaurdspritesheet.png-028a711c187e87ac11e2d236052b5887.ctex"
+uid="uid://blyd0ujqx8k4d"
+path="res://.godot/imported/Artist 1 sprite sheet.png-8711b326b8760b3b9c865844fb1f446c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/bodygaurdspritesheet.png"
-dest_files=["res://.godot/imported/bodygaurdspritesheet.png-028a711c187e87ac11e2d236052b5887.ctex"]
+source_file="res://game_stuff/Assets/Characters/Artist 1 sprite sheet.png"
+dest_files=["res://.godot/imported/Artist 1 sprite sheet.png-8711b326b8760b3b9c865844fb1f446c.ctex"]
 
 [params]
 

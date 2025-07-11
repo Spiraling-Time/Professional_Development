@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwy1xy6m2vd8r"]
 
 [ext_resource type="Script" uid="uid://kiwepakr14nd" path="res://game_stuff/Code/kyle.gd" id="1_oty1q"]
-[ext_resource type="Texture2D" uid="uid://5u18cb5lwkhh" path="res://game_stuff/Assets/kyle sprite sheet.png" id="2_oty1q"]
+[ext_resource type="Texture2D" uid="uid://5u18cb5lwkhh" path="res://game_stuff/Assets/Characters/kyle sprite sheet.png" id="2_oty1q"]
 
 [node name="Kyle" type="Node2D"]
 script = ExtResource("1_oty1q")

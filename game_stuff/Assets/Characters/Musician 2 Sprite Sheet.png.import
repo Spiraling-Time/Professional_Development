@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5u18cb5lwkhh"
-path="res://.godot/imported/kyle sprite sheet.png-0f92b753e5813a7ea04fe417477cc32b.ctex"
+uid="uid://60kqrcxr0u12"
+path="res://.godot/imported/Musician 2 Sprite Sheet.png-65e02815a6bf1bf9b37298a5342890f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/kyle sprite sheet.png"
-dest_files=["res://.godot/imported/kyle sprite sheet.png-0f92b753e5813a7ea04fe417477cc32b.ctex"]
+source_file="res://game_stuff/Assets/Characters/Musician 2 Sprite Sheet.png"
+dest_files=["res://.godot/imported/Musician 2 Sprite Sheet.png-65e02815a6bf1bf9b37298a5342890f6.ctex"]
 
 [params]
 

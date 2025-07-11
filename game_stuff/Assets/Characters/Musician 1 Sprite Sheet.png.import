@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm38622fosxun"
-path="res://.godot/imported/Color Professional Development_ Artist 1 Sprite Sheet.png-37910538f0f1192fb76e4a119e51a277.ctex"
+uid="uid://ubjtfxltwysl"
+path="res://.godot/imported/Musician 1 Sprite Sheet.png-a0c56f87f3007f7249b8d117a0316f41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/Color Professional Development_ Artist 1 Sprite Sheet.png"
-dest_files=["res://.godot/imported/Color Professional Development_ Artist 1 Sprite Sheet.png-37910538f0f1192fb76e4a119e51a277.ctex"]
+source_file="res://game_stuff/Assets/Characters/Musician 1 Sprite Sheet.png"
+dest_files=["res://.godot/imported/Musician 1 Sprite Sheet.png-a0c56f87f3007f7249b8d117a0316f41.ctex"]
 
 [params]
 
