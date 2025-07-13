@@ -24,7 +24,18 @@ shape = SubResource("CircleShape2D_yya4n")
 
 [node name="Spawner" type="Node2D" parent="."]
 
-[node name="Role" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(642, -7)
+[node name="Role1" parent="Spawner" instance=ExtResource("4_2jibd")]
+position = Vector2(990, -48)
+
+[node name="Role2" parent="Spawner" instance=ExtResource("4_2jibd")]
+position = Vector2(-921, 7)
+scale = Vector2(-1, 1)
+
+[node name="Role3" parent="Spawner" instance=ExtResource("4_2jibd")]
+position = Vector2(-322, 866)
+scale = Vector2(-1, 1)
+
+[node name="Role4" parent="Spawner" instance=ExtResource("4_2jibd")]
+position = Vector2(278, -642)
 
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]

@@ -12,6 +12,8 @@ func _physics_process(delta: float) -> void:
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Move")
 		dir = ($"../../Kyle".global_position-global_position).normalized()
+		if role: velocity = dir*speed/2
+		else: velocity = dir*speed
 		velocity = dir*speed
 		move_and_slide()
 
@@ -19,13 +21,16 @@ func _physics_process(delta: float) -> void:
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Run")
 		dir = ($"../../Kyle".global_position-global_position).normalized()
-		velocity = dir*speed*1.5
+		velocity = dir*speed
 		move_and_slide()
 
 	elif mode == "RETREAT":
 		$AnimationPlayer.play("Retreat")
 		dir = (global_position-$"../../Kyle".global_position).normalized()
-
+		if role:
+			velocity = dir*speed/5
+			move_and_slide()
+		
 	elif mode == "CELEBRATE":
 		$AnimationPlayer.play("Celebrate")
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqqwwyrxvqya1"]
+[gd_scene load_steps=8 format=3 uid="uid://bqqwwyrxvqya1"]
 
 [ext_resource type="Script" uid="uid://bexve3ycst22q" path="res://game_stuff/Code/role.gd" id="1_ken03"]
-[ext_resource type="Texture2D" uid="uid://blyd0ujqx8k4d" path="res://game_stuff/Assets/Characters/Artist 1 sprite sheet.png" id="2_ken03"]
 
 [sub_resource type="Animation" id="Animation_thxo3"]
 resource_name = "Happy"
@@ -17,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [3, 4, 3]
+"values": [4, 5, 4]
 }
 
 [sub_resource type="Animation" id="Animation_xanpx"]
@@ -54,7 +53,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_fau8r"]
 resource_name = "Sad"
-length = 1.2
+length = 0.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -63,27 +62,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2),
+"times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [6, 7, 6]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.6, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"move"
-}, {
-"args": [],
-"method": &"move"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_ken03"]
@@ -112,15 +94,11 @@ _data = {
 &"Run": SubResource("Animation_ken03")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1xs"]
-size = Vector2(55, 114)
-
 [node name="Role" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_ken03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ken03")
 vframes = 8
 frame = 1
 
@@ -130,5 +108,3 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, 8)
-shape = SubResource("RectangleShape2D_1u1xs")
