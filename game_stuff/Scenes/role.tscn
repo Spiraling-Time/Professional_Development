@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwkkknsbystxb"]
+[gd_scene load_steps=10 format=3 uid="uid://bqqwwyrxvqya1"]
 
-[ext_resource type="Script" uid="uid://bhueiya2n2gnc" path="res://game_stuff/Code/fan_1.gd" id="1_1u1xs"]
-[ext_resource type="Texture2D" uid="uid://c7badmr6ju781" path="res://game_stuff/Assets/Characters/fan1spritesheet.png" id="2_1u1xs"]
+[ext_resource type="Script" uid="uid://bexve3ycst22q" path="res://game_stuff/Code/role.gd" id="1_ken03"]
+[ext_resource type="Texture2D" uid="uid://blyd0ujqx8k4d" path="res://game_stuff/Assets/Characters/Artist 1 sprite sheet.png" id="2_ken03"]
 
 [sub_resource type="Animation" id="Animation_thxo3"]
 resource_name = "Happy"
@@ -18,6 +18,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [3, 4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_xanpx"]
+resource_name = "Run"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_1u1xs"]
@@ -69,10 +86,10 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_xanpx"]
+[sub_resource type="Animation" id="Animation_ken03"]
 resource_name = "Run"
 length = 0.4
-step = 0.01
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,7 +100,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [1, 2, 1]
+"values": [2, 3, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thxo3"]
@@ -91,18 +108,19 @@ _data = {
 &"Celebrate": SubResource("Animation_thxo3"),
 &"Move": SubResource("Animation_xanpx"),
 &"RESET": SubResource("Animation_1u1xs"),
-&"Retreat": SubResource("Animation_fau8r")
+&"Retreat": SubResource("Animation_fau8r"),
+&"Run": SubResource("Animation_ken03")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1xs"]
-size = Vector2(48, 67)
+size = Vector2(55, 114)
 
-[node name="Fan1" type="CharacterBody2D"]
+[node name="Role" type="CharacterBody2D"]
 collision_layer = 3
-script = ExtResource("1_1u1xs")
+script = ExtResource("1_ken03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1u1xs")
+texture = ExtResource("2_ken03")
 vframes = 8
 frame = 1
 
@@ -112,5 +130,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 17.5)
+position = Vector2(4.5, 8)
 shape = SubResource("RectangleShape2D_1u1xs")

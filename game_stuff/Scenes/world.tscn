@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cpj5ue57qdbw2" path="res://game_stuff/Code/world.gd" id="1_2jibd"]
 [ext_resource type="PackedScene" uid="uid://dwy1xy6m2vd8r" path="res://game_stuff/Scenes/kyle.tscn" id="1_51tv8"]
 [ext_resource type="PackedScene" uid="uid://cr8dqiw7a6ve5" path="res://game_stuff/Scenes/body_guard_orbit.tscn" id="2_51tv8"]
-[ext_resource type="PackedScene" uid="uid://dwkkknsbystxb" path="res://game_stuff/Scenes/fan_1.tscn" id="3_jnm5b"]
+[ext_resource type="PackedScene" uid="uid://bqqwwyrxvqya1" path="res://game_stuff/Scenes/role.tscn" id="4_2jibd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yya4n"]
 radius = 190.0
@@ -24,63 +24,7 @@ shape = SubResource("CircleShape2D_yya4n")
 
 [node name="Spawner" type="Node2D" parent="."]
 
-[node name="Fan1" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-1619, -321)
-scale = Vector2(-1, 1)
-
-[node name="Fan7" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-2014, 335)
-scale = Vector2(-1, 1)
-
-[node name="Fan8" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-1238, 1055)
-scale = Vector2(-1, 1)
-
-[node name="Fan9" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-1202, -605)
-scale = Vector2(-1, 1)
-
-[node name="Fan10" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-2350, -302)
-scale = Vector2(-1, 1)
-
-[node name="Fan11" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-2483, 57)
-scale = Vector2(-1, 1)
-
-[node name="Fan12" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-2911, -174)
-scale = Vector2(-1, 1)
-
-[node name="Fan13" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-3280, -80)
-scale = Vector2(-1, 1)
-
-[node name="Fan14" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-1871, 3294)
-scale = Vector2(-1, 1)
-
-[node name="Fan15" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-2989, 3890)
-scale = Vector2(-1, 1)
-
-[node name="Fan16" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(-4254, 3864)
-scale = Vector2(-1, 1)
-
-[node name="Fan2" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(1709, 897)
-
-[node name="Fan3" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(1501, 224)
-
-[node name="Fan4" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(1137, -215)
-
-[node name="Fan5" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(1212, -1096)
-
-[node name="Fan6" parent="Spawner" instance=ExtResource("3_jnm5b")]
-position = Vector2(1201, 1089)
+[node name="Role" parent="Spawner" instance=ExtResource("4_2jibd")]
+position = Vector2(642, -7)
 
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]

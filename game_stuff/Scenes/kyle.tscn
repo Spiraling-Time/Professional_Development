@@ -9,5 +9,6 @@ script = ExtResource("1_oty1q")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_oty1q")
 vframes = 8
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,35 +1,9 @@
-extends CharacterBody2D
+extends "res://game_stuff/Code/fan_and_role.gd"
 
-var type_of_person = "FAN1"
-var mode = "MOVE"
-var max_speed = 300
-var speed = max_speed
-var dir = Vector2.ZERO
-
-func _physics_process(delta: float) -> void:
-	if mode == "MOVE":
-		#if type_of_person = "FAN1"
-		$AnimationPlayer.play("Move")
-		dir = ($"../../Kyle".global_position-global_position).normalized()
-		velocity = dir*speed
-		move_and_slide()
-		
-	elif mode == "RETREAT":
-		$AnimationPlayer.play("Retreat")
-		dir = (global_position-$"../../Kyle".global_position).normalized()
-
-	elif mode == "CELEBRATE":
-		$AnimationPlayer.play("Celebrate")
-
-	
-	
-
-
-func turn_away():
-	mode = "RETREAT"
-	scale.x = -1
-	set_collision_layer_value(1, false)
-	set_collision_mask_value(1, false)
-func move():
-	velocity = dir*speed
-	move_and_slide()
+func _ready() -> void:
+	type_of_person = "FAN1"
+	role = false
+	mode = "MOVE"
+	max_speed = 300
+	speed = max_speed
+	dir = Vector2.ZERO
