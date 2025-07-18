@@ -7,7 +7,13 @@ var max_speed
 var speed
 var dir
 
+var base_Z_Index = 0
+
+func _ready() -> void:
+	set_z_index(base_Z_Index)
+
 func _physics_process(delta: float) -> void:
+	Z_Indexing()
 	if mode == "MOVE":
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Move")
@@ -46,3 +52,6 @@ func turn_away():
 func move():
 	velocity = dir*speed
 	move_and_slide()
+
+func Z_Indexing():
+	set_z_index(global_position.y + base_Z_Index)

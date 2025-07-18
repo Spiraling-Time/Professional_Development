@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbqwug5lves1e"]
+[gd_scene load_steps=5 format=3 uid="uid://dbqwug5lves1e"]
 
 [ext_resource type="Script" uid="uid://cpj5ue57qdbw2" path="res://game_stuff/Code/world.gd" id="1_2jibd"]
 [ext_resource type="PackedScene" uid="uid://dwy1xy6m2vd8r" path="res://game_stuff/Scenes/kyle.tscn" id="1_51tv8"]
 [ext_resource type="PackedScene" uid="uid://cr8dqiw7a6ve5" path="res://game_stuff/Scenes/body_guard_orbit.tscn" id="2_51tv8"]
-[ext_resource type="PackedScene" uid="uid://bqqwwyrxvqya1" path="res://game_stuff/Scenes/role.tscn" id="4_2jibd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yya4n"]
 radius = 190.0
@@ -23,29 +22,5 @@ shape = SubResource("CircleShape2D_yya4n")
 [node name="BodyGuard_Orbit" parent="." instance=ExtResource("2_51tv8")]
 
 [node name="Spawner" type="Node2D" parent="."]
-
-[node name="Role1" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(990, -48)
-
-[node name="Role5" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(1807, 259)
-
-[node name="Role6" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(2425, -288)
-
-[node name="Role2" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(-921, 7)
-scale = Vector2(-1, 1)
-
-[node name="Role3" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(-322, 866)
-scale = Vector2(-1, 1)
-
-[node name="Role7" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(-1761, -684)
-scale = Vector2(-1, 1)
-
-[node name="Role4" parent="Spawner" instance=ExtResource("4_2jibd")]
-position = Vector2(278, -642)
 
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]
