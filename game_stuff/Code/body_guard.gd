@@ -1,13 +1,13 @@
 extends Area2D
 
-var base_Z_Index = 0
+var base_Z_Index = 1
 
 func _ready() -> void:
 	set_z_index(base_Z_Index)
 	
 	
 func _physics_process(delta: float) -> void:
-	#Z_Indexing()
+	Z_Indexing()
 	
 	for bodies in get_overlapping_bodies():
 		if bodies.has_method("turn_away"):

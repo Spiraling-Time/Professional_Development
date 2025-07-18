@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciikfnkq16hx6"
-path="res://.godot/imported/Professional Development_ Role Sprite Sheet.png-626a4466b4e082d84718229c7d7f4e29.ctex"
+uid="uid://bq2n8fxol8lan"
+path="res://.godot/imported/Icon Sprite Sheet.png-21d0e8988b8e0f740fa55835d3b41b16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/Professional Development_ Role Sprite Sheet.png"
-dest_files=["res://.godot/imported/Professional Development_ Role Sprite Sheet.png-626a4466b4e082d84718229c7d7f4e29.ctex"]
+source_file="res://game_stuff/Assets/Icon Sprite Sheet.png"
+dest_files=["res://.godot/imported/Icon Sprite Sheet.png-21d0e8988b8e0f740fa55835d3b41b16.ctex"]
 
 [params]
 

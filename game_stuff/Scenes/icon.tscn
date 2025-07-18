@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://db3tj157xrcx2"]
+
+[ext_resource type="Texture2D" uid="uid://bq2n8fxol8lan" path="res://game_stuff/Assets/Icon Sprite Sheet.png" id="1_ff5kk"]
+
+[node name="Icon" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ff5kk")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

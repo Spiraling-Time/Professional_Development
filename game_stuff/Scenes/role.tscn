@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqqwwyrxvqya1"]
+[gd_scene load_steps=10 format=3 uid="uid://bqqwwyrxvqya1"]
 
 [ext_resource type="Script" uid="uid://bexve3ycst22q" path="res://game_stuff/Code/role.gd" id="1_ken03"]
+[ext_resource type="PackedScene" uid="uid://bj2inndrlfv5o" path="res://game_stuff/Scenes/stars.tscn" id="2_ken03"]
+[ext_resource type="PackedScene" uid="uid://db3tj157xrcx2" path="res://game_stuff/Scenes/icon.tscn" id="3_2dw77"]
 
 [sub_resource type="Animation" id="Animation_thxo3"]
 resource_name = "Happy"
@@ -108,3 +110,9 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Stars" parent="." instance=ExtResource("2_ken03")]
+z_index = 2
+
+[node name="Icon" parent="." instance=ExtResource("3_2dw77")]
+z_index = 1

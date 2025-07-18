@@ -7,6 +7,10 @@ var max_speed
 var speed
 var dir
 
+var job
+
+var stars = 5
+
 var base_Z_Index = 0
 
 func _ready() -> void:
