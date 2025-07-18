@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dje3s4yrrmqwy"]
+[gd_scene load_steps=4 format=3 uid="uid://dje3s4yrrmqwy"]
+
+[ext_resource type="Script" uid="uid://dclt7mwc77x6" path="res://game_stuff/Code/cursor.gd" id="1_pcgy3"]
+[ext_resource type="Texture2D" uid="uid://wsw1a4u5c2k" path="res://game_stuff/Assets/Cursor Professional Development.png" id="1_vmpmq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v3b7j"]
+radius = 16.0
 
 [node name="Cursor" type="Area2D"]
+script = ExtResource("1_pcgy3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v3b7j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vmpmq")
