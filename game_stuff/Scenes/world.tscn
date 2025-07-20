@@ -1,15 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbqwug5lves1e"]
+[gd_scene load_steps=7 format=3 uid="uid://dbqwug5lves1e"]
 
 [ext_resource type="Script" uid="uid://cpj5ue57qdbw2" path="res://game_stuff/Code/world.gd" id="1_2jibd"]
 [ext_resource type="PackedScene" uid="uid://dwy1xy6m2vd8r" path="res://game_stuff/Scenes/kyle.tscn" id="1_51tv8"]
 [ext_resource type="PackedScene" uid="uid://cr8dqiw7a6ve5" path="res://game_stuff/Scenes/body_guard_orbit.tscn" id="2_51tv8"]
 [ext_resource type="PackedScene" uid="uid://dje3s4yrrmqwy" path="res://game_stuff/Scenes/cursor.tscn" id="4_2jibd"]
+[ext_resource type="Texture2D" uid="uid://cy48een1ok6b3" path="res://game_stuff/Assets/Background Sprite Sheet.png" id="5_yya4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yya4n"]
 radius = 190.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2jibd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1000
+texture = ExtResource("5_yya4n")
+vframes = 2
 
 [node name="Cursor" parent="." instance=ExtResource("4_2jibd")]
 
@@ -34,4 +40,10 @@ collision_mask = 4
 polygon = PackedVector2Array(0, 0, -1000, 450, -1000, -450)
 disabled = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

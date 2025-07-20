@@ -40,4 +40,7 @@ func wave_colliding():
 	$"../Wave".rotation = dir.angle()
 
 func wave_stop_colliding():
+	for bodies in $"../Wave".get_overlapping_bodies():
+		if bodies.has_method("get_ready_to_run"):
+			bodies.get_ready_to_run()
 	$"../Wave/CollisionShape2D".disabled = true

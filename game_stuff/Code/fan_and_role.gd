@@ -13,6 +13,9 @@ var stars = 5
 
 var base_Z_Index = 0
 
+var distance_before_chill = randi_range(800,100)
+
+var ready_to_run: bool = true
 
 func _ready() -> void:
 	set_z_index(base_Z_Index)
@@ -23,15 +26,21 @@ func _physics_process(delta: float) -> void:
 		if mode == "RETREAT":
 			set_collision_layer_value(1, true)
 			set_collision_mask_value(1, true)
-			scale.x = -1
+			if scale.x == -1: scale.x = 1
+			elif scale.x == 1: scale.x = -1
+			mode = "MOVE"
+
+		elif mode == "MOVE" and ready_to_run:
 			mode = "RUN"
-		elif mode == "MOVE": mode = "RUN"
+
 	if mode == "MOVE":
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Move")
-		dir = ($"../../Kyle".global_position-global_position).normalized()
-		if role: velocity = dir*speed/2
-		else: velocity = dir*speed
+		if global_position.distance_to($"../../Kyle".global_position) >distance_before_chill:
+			dir = ($"../../Kyle".global_position-global_position).normalized()
+		else:
+			dir = ($"../../Kyle".global_position-global_position).normalized()
+			dir.y = 0
 		velocity = dir*speed
 		move_and_slide()
 
@@ -60,16 +69,26 @@ func _physics_process(delta: float) -> void:
 		else:
 			$Stars.visible = false
 			$Icon.visible = false
-
+	if global_position.y < -715.0 or global_position.y > 715.0 or global_position.x < -1260.0 or global_position.x > 1260.0:
+		delete_self()
 
 func turn_away():
 	mode = "RETREAT"
 	scale.x = -1
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
+	ready_to_run = false
 func move():
 	velocity = dir*speed
 	move_and_slide()
 
 func Z_Indexing():
 	set_z_index(global_position.y + base_Z_Index)
+
+func delete_self():
+	print(global_position)
+	$"../..".number_of_guys_on_map -=1
+	queue_free()
+
+func get_ready_to_run():
+	ready_to_run = true

@@ -59,7 +59,7 @@ func _ready() -> void:
 		$CollisionShape2D.shape = theshape
 		$CollisionShape2D.position = Vector2(0.0, 12.5)	
 		job = "Playtester"
-	stars = randi_range(0,4)
+	#stars = randi_range(0,4)
 	$Stars.frame = stars
 	$Stars.position.y += theshape.size.y-260
 	$Icon.position.y += theshape.size.y-300
@@ -70,6 +70,6 @@ func _ready() -> void:
 
 	role = true
 	mode = "MOVE"
-	max_speed = randi_range(200,400)
+	max_speed = randi_range(200,300)
 	speed = max_speed
 	dir = Vector2.ZERO
