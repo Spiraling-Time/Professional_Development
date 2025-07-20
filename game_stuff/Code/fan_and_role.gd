@@ -86,7 +86,6 @@ func Z_Indexing():
 	set_z_index(global_position.y + base_Z_Index)
 
 func delete_self():
-	print(global_position)
 	$"../..".number_of_guys_on_map -=1
 	queue_free()
 
