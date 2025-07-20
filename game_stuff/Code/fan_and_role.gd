@@ -45,7 +45,13 @@ func _physics_process(delta: float) -> void:
 		$AnimationPlayer.play("Celebrate")
 
 	
-	
+	if role:
+		if self in $"../../Cursor".get_overlapping_bodies():
+			$Stars.visible = true
+			$Icon.visible = true
+		else:
+			$Stars.visible = false
+			$Icon.visible = false
 
 
 func turn_away():
