@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbqwug5lves1e"]
+[gd_scene load_steps=8 format=3 uid="uid://dbqwug5lves1e"]
 
 [ext_resource type="Script" uid="uid://cpj5ue57qdbw2" path="res://game_stuff/Code/world.gd" id="1_2jibd"]
 [ext_resource type="PackedScene" uid="uid://dwy1xy6m2vd8r" path="res://game_stuff/Scenes/kyle.tscn" id="1_51tv8"]
@@ -6,13 +6,31 @@
 [ext_resource type="PackedScene" uid="uid://dje3s4yrrmqwy" path="res://game_stuff/Scenes/cursor.tscn" id="4_2jibd"]
 [ext_resource type="Texture2D" uid="uid://cy48een1ok6b3" path="res://game_stuff/Assets/Background Sprite Sheet.png" id="5_yya4n"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_yya4n"]
+font_size = 60
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_yya4n"]
 radius = 190.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_2jibd")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Time_left" type="Label" parent="."]
+z_index = 2999
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -516.0
+offset_right = -19.0
+offset_bottom = -351.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_yya4n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1000
@@ -26,6 +44,8 @@ vframes = 2
 [node name="Camera2D" type="Camera2D" parent="Kyle"]
 
 [node name="OnTheTeam" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheTeam"]
 shape = SubResource("CircleShape2D_yya4n")
@@ -42,10 +62,15 @@ collision_mask = 4
 polygon = PackedVector2Array(0, 0, -1000, 450, -1000, -450)
 disabled = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Spawn_Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
 autostart = true
 
+[node name="Game_Time" type="Timer" parent="."]
+wait_time = 100.0
+one_shot = true
+
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Game_Time" to="." method="_on_game_time_timeout"]

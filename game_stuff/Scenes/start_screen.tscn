@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3swa3ocb8kx1"]
+[gd_scene load_steps=6 format=3 uid="uid://c3swa3ocb8kx1"]
 
 [ext_resource type="Texture2D" uid="uid://cy48een1ok6b3" path="res://game_stuff/Assets/Background Sprite Sheet.png" id="1_7806l"]
 [ext_resource type="Script" uid="uid://de4n6mknouiwf" path="res://game_stuff/Code/start_screen.gd" id="1_q7a8b"]
-[ext_resource type="Texture2D" uid="uid://dgp05juadrr7s" path="res://game_stuff/Assets/Proffesional Development Buttons.png" id="3_mhc1d"]
+[ext_resource type="Texture2D" uid="uid://dgp05juadrr7s" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 001.png" id="3_mhc1d"]
+[ext_resource type="Texture2D" uid="uid://bnf3n3rat2tmj" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 002.png" id="4_k2epy"]
+[ext_resource type="Texture2D" uid="uid://kkw7skuiwr7b" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 003.png" id="5_6a4jp"]
 
 [node name="Start Screen" type="Node2D"]
 script = ExtResource("1_q7a8b")
@@ -14,23 +16,57 @@ z_index = -3
 texture = ExtResource("1_7806l")
 vframes = 2
 
+[node name="Normal_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 0.5)
+texture = ExtResource("3_mhc1d")
+
 [node name="Begin Normal Mode Button" type="Button" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -117.0
-offset_top = -69.0
-offset_right = 118.0
-offset_bottom = 70.0
+offset_left = -120.0
+offset_top = -67.5
+offset_right = 120.0
+offset_bottom = 67.5
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
 flat = true
 
-[node name="Normal_sprite" type="Sprite2D" parent="."]
-position = Vector2(0.5, 0.5)
-texture = ExtResource("3_mhc1d")
+[node name="Normal_info_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -222)
+texture = ExtResource("4_k2epy")
+
+[node name="Normal Info Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -289.5
+offset_right = 120.0
+offset_bottom = -154.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+flat = true
+
+[node name="Normal_Info_expanded" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_6a4jp")
+
+[node name="Expanded Info Normal" type="Button" parent="."]
+visible = false
+offset_left = -398.0
+offset_top = -235.0
+offset_right = 398.0
+offset_bottom = 236.0
+focus_mode = 1
+flat = true
 
 [connection signal="pressed" from="Begin Normal Mode Button" to="." method="_on_begin_normal_mode_button_pressed"]
+[connection signal="pressed" from="Normal Info Button" to="." method="_on_normal_info_button_pressed"]
+[connection signal="pressed" from="Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]

@@ -97,7 +97,8 @@ _data = {
 }
 
 [node name="Role" type="CharacterBody2D"]
-collision_layer = 7
+collision_layer = 6
+collision_mask = 0
 script = ExtResource("1_ken03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

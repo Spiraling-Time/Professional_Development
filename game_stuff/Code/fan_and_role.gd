@@ -13,9 +13,11 @@ var stars = 5
 
 var base_Z_Index = 0
 
-var distance_before_chill = randi_range(800,100)
+var distance_before_chill = randi_range(800,1000)
 
 var ready_to_run: bool = true
+
+var locked_in: bool = false
 
 func _ready() -> void:
 	set_z_index(base_Z_Index)
@@ -24,10 +26,8 @@ func _physics_process(delta: float) -> void:
 	Z_Indexing()
 	if self in $"../../Wave".get_overlapping_bodies():
 		if mode == "RETREAT":
-			set_collision_layer_value(1, true)
-			set_collision_mask_value(1, true)
-			if scale.x == -1: scale.x = 1
-			elif scale.x == 1: scale.x = -1
+
+			turn_around()
 			mode = "MOVE"
 
 		elif mode == "MOVE" and ready_to_run:
@@ -36,11 +36,14 @@ func _physics_process(delta: float) -> void:
 	if mode == "MOVE":
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Move")
-		if global_position.distance_to($"../../Kyle".global_position) >distance_before_chill:
-			dir = ($"../../Kyle".global_position-global_position).normalized()
-		else:
-			dir = ($"../../Kyle".global_position-global_position).normalized()
-			dir.y = 0
+		if !locked_in:
+			if global_position.distance_to($"../../Kyle".global_position) >distance_before_chill:
+				dir = ($"../../Kyle".global_position-global_position).normalized()
+			elif dir.x <5 and dir.x >-5:
+				locked_in = true
+				dir.x = ($"../../Kyle".global_position-global_position).normalized().x
+		else: dir.y = 0
+	
 		velocity = dir*speed
 		move_and_slide()
 
@@ -48,7 +51,7 @@ func _physics_process(delta: float) -> void:
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Run")
 		dir = ($"../../Kyle".global_position-global_position).normalized()
-		velocity = dir*speed
+		velocity = dir*speed*2
 		move_and_slide()
 
 	elif mode == "RETREAT":
@@ -74,9 +77,8 @@ func _physics_process(delta: float) -> void:
 
 func turn_away():
 	mode = "RETREAT"
-	scale.x = -1
-	set_collision_layer_value(1, false)
-	set_collision_mask_value(1, false)
+	turn_around()
+
 	ready_to_run = false
 func move():
 	velocity = dir*speed
@@ -91,3 +93,8 @@ func delete_self():
 
 func get_ready_to_run():
 	ready_to_run = true
+	locked_in = false
+
+func turn_around():
+	if scale.x == 1: scale.x = -1
+	else: scale.x = 1

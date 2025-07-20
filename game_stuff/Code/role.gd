@@ -67,9 +67,8 @@ func _ready() -> void:
 	elif job == "Musician": $Icon.frame = 1
 	elif job == "Programmer": $Icon.frame = 2
 	elif job == "Playtester": $Icon.frame = 3
-
 	role = true
 	mode = "MOVE"
-	max_speed = randi_range(200,300)
+	max_speed = randi_range(200,250)
 	speed = max_speed
 	dir = Vector2.ZERO
