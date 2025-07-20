@@ -11,4 +11,5 @@ position = Vector2(-350, 0)
 
 [node name="BodyGuard2" parent="." instance=ExtResource("1_1khxw")]
 position = Vector2(350, 0)
-scale = Vector2(-1, 1)
+rotation = -3.14159
+scale = Vector2(1, -1)

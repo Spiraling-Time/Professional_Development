@@ -73,4 +73,3 @@ func _ready() -> void:
 	max_speed = randi_range(200,400)
 	speed = max_speed
 	dir = Vector2.ZERO
-	

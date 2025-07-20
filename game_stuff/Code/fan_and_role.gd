@@ -13,11 +13,19 @@ var stars = 5
 
 var base_Z_Index = 0
 
+
 func _ready() -> void:
 	set_z_index(base_Z_Index)
 
 func _physics_process(delta: float) -> void:
 	Z_Indexing()
+	if self in $"../../Wave".get_overlapping_bodies():
+		if mode == "RETREAT":
+			set_collision_layer_value(1, true)
+			set_collision_mask_value(1, true)
+			scale.x = -1
+			mode = "RUN"
+		elif mode == "MOVE": mode = "RUN"
 	if mode == "MOVE":
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Move")

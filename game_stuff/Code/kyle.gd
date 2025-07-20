@@ -13,11 +13,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if $"../Cursor".global_position.x >0:
 		if !left_scale_swap:
-			scale.x = scale.x*-1
+			scale.x = -1
 			left_scale_swap = true
 			right_scale_swap = false
 	elif !right_scale_swap:
-		scale.x = scale.x*-1
+		scale.x = 1
 		left_scale_swap = false
 		right_scale_swap = true
 
