@@ -174,7 +174,7 @@ func end_of_round():
 			self.add_child(newstar)
 		$HIGH_SCORE.text = "%d" % saved_normal_final_score
 				
-
+		$End_round.visible = true
 
 
 

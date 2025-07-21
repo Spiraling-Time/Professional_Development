@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbqwug5lves1e"]
+[gd_scene load_steps=13 format=3 uid="uid://dbqwug5lves1e"]
 
 [ext_resource type="Script" uid="uid://cpj5ue57qdbw2" path="res://game_stuff/Code/world.gd" id="1_2jibd"]
 [ext_resource type="PackedScene" uid="uid://dwy1xy6m2vd8r" path="res://game_stuff/Scenes/kyle.tscn" id="1_51tv8"]
 [ext_resource type="PackedScene" uid="uid://cr8dqiw7a6ve5" path="res://game_stuff/Scenes/body_guard_orbit.tscn" id="2_51tv8"]
 [ext_resource type="PackedScene" uid="uid://dje3s4yrrmqwy" path="res://game_stuff/Scenes/cursor.tscn" id="4_2jibd"]
 [ext_resource type="Texture2D" uid="uid://cy48een1ok6b3" path="res://game_stuff/Assets/Background Sprite Sheet.png" id="5_yya4n"]
-[ext_resource type="Texture2D" uid="uid://dt6fwi7qwf3m4" path="res://game_stuff/Assets/Score stuff/Professional Development Score.png" id="6_yuarw"]
+[ext_resource type="Texture2D" uid="uid://b1al3edf4ag7y" path="res://game_stuff/Assets/Score stuff/Professional Development Score (1).png" id="6_cv7es"]
 [ext_resource type="Texture2D" uid="uid://4ysl5prdo33u" path="res://game_stuff/Assets/Professional Development_ 5 Stars Sprite Sheet.png" id="7_210hi"]
+[ext_resource type="Script" uid="uid://cwx40vakjdr7w" path="res://game_stuff/Code/end_round.gd" id="8_cv7es"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yya4n"]
 font_size = 60
@@ -86,7 +87,7 @@ one_shot = true
 [node name="Final Score" type="Sprite2D" parent="."]
 visible = false
 z_index = 3001
-texture = ExtResource("6_yuarw")
+texture = ExtResource("6_cv7es")
 
 [node name="balancedSCORE" type="Sprite2D" parent="."]
 visible = false
@@ -160,6 +161,19 @@ rotation = -0.606661
 text = "NEW HIGH SCORE!!!"
 label_settings = SubResource("LabelSettings_cv7es")
 
+[node name="End_round" type="Button" parent="."]
+process_mode = 2
+visible = false
+z_index = 3003
+offset_left = -399.0
+offset_top = -236.0
+offset_right = 399.0
+offset_bottom = 237.0
+focus_mode = 0
+flat = true
+script = ExtResource("8_cv7es")
+
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Game_Time" to="." method="_on_game_time_timeout"]
+[connection signal="pressed" from="End_round" to="End_round" method="_on_pressed"]

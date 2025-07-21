@@ -1,13 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3swa3ocb8kx1"]
+[gd_scene load_steps=12 format=3 uid="uid://c3swa3ocb8kx1"]
 
 [ext_resource type="Texture2D" uid="uid://cy48een1ok6b3" path="res://game_stuff/Assets/Background Sprite Sheet.png" id="1_7806l"]
 [ext_resource type="Script" uid="uid://de4n6mknouiwf" path="res://game_stuff/Code/start_screen.gd" id="1_q7a8b"]
 [ext_resource type="Texture2D" uid="uid://dgp05juadrr7s" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 001.png" id="3_mhc1d"]
 [ext_resource type="Texture2D" uid="uid://bnf3n3rat2tmj" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 002.png" id="4_k2epy"]
-[ext_resource type="Texture2D" uid="uid://kkw7skuiwr7b" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 003.png" id="5_6a4jp"]
+[ext_resource type="Texture2D" uid="uid://3pmapiv7bn56" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 003.png" id="5_6a4jp"]
+[ext_resource type="Texture2D" uid="uid://cdljphew8867i" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 008.png" id="6_v1y14"]
+[ext_resource type="Texture2D" uid="uid://hpaycjw1v4nv" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 009.png" id="7_mbe0c"]
+[ext_resource type="Texture2D" uid="uid://v0jgpfjgrf6n" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 004.png" id="8_4ral8"]
+[ext_resource type="Texture2D" uid="uid://m34u161u1hbb" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 005.png" id="9_kolpa"]
+[ext_resource type="Texture2D" uid="uid://cdsd1mummgbak" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 006.png" id="10_82vcl"]
+[ext_resource type="Texture2D" uid="uid://dc8yuyxmp1404" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 007.png" id="11_b880k"]
 
 [node name="Start Screen" type="Node2D"]
 script = ExtResource("1_q7a8b")
+
+[node name="Instructions" type="Sprite2D" parent="."]
+position = Vector2(0, -343)
+texture = ExtResource("8_4ral8")
+
+[node name="Instructions_Button" type="Button" parent="Instructions"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -338.0
+offset_right = -360.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -16,57 +42,144 @@ z_index = -3
 texture = ExtResource("1_7806l")
 vframes = 2
 
-[node name="Normal_sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 0.5)
-texture = ExtResource("3_mhc1d")
-
-[node name="Begin Normal Mode Button" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -67.5
-offset_right = 120.0
-offset_bottom = 67.5
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 1
-flat = true
-
-[node name="Normal_info_sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -222)
-texture = ExtResource("4_k2epy")
-
-[node name="Normal Info Button" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -289.5
-offset_right = 120.0
-offset_bottom = -154.5
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 1
-flat = true
-
 [node name="Normal_Info_expanded" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("5_6a4jp")
 
-[node name="Expanded Info Normal" type="Button" parent="."]
-visible = false
+[node name="Expanded Info Normal" type="Button" parent="Normal_Info_expanded"]
+z_index = 1
 offset_left = -398.0
 offset_top = -235.0
 offset_right = 398.0
 offset_bottom = 236.0
-focus_mode = 1
+focus_mode = 0
 flat = true
 
-[connection signal="pressed" from="Begin Normal Mode Button" to="." method="_on_begin_normal_mode_button_pressed"]
-[connection signal="pressed" from="Normal Info Button" to="." method="_on_normal_info_button_pressed"]
-[connection signal="pressed" from="Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
+[node name="Credits_expanded" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_mbe0c")
+
+[node name="Expanded Info Normal" type="Button" parent="Credits_expanded"]
+z_index = 1
+offset_left = -398.0
+offset_top = -235.0
+offset_right = 398.0
+offset_bottom = 236.0
+focus_mode = 0
+flat = true
+
+[node name="Instructions Expanded" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("9_kolpa")
+
+[node name="Expanded Info Normal" type="Button" parent="Instructions Expanded"]
+z_index = 1
+offset_left = -398.0
+offset_top = -235.0
+offset_right = 398.0
+offset_bottom = 236.0
+focus_mode = 0
+flat = true
+
+[node name="Introduction_Expanded" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_b880k")
+
+[node name="Expanded Info Normal" type="Button" parent="Introduction_Expanded"]
+z_index = 1
+offset_left = -398.0
+offset_top = -235.0
+offset_right = 398.0
+offset_bottom = 236.0
+focus_mode = 0
+flat = true
+
+[node name="Introduction" type="Sprite2D" parent="."]
+position = Vector2(0, -343)
+texture = ExtResource("10_82vcl")
+
+[node name="Introduction_Button" type="Button" parent="Introduction"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -338.0
+offset_right = -360.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[node name="Credits_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 325)
+texture = ExtResource("6_v1y14")
+
+[node name="Credits_Button" type="Button" parent="Credits_sprite"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -338.0
+offset_right = -360.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[node name="Normal_info_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -120)
+texture = ExtResource("4_k2epy")
+
+[node name="Normal Info Button" type="Button" parent="Normal_info_sprite"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -337.5
+offset_right = -360.0
+offset_bottom = -202.5
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[node name="Normal_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 102.5)
+texture = ExtResource("3_mhc1d")
+
+[node name="Begin Normal Mode Button" type="Button" parent="Normal_sprite"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -338.0
+offset_right = -360.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="Instructions/Instructions_Button" to="." method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="Normal_Info_expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
+[connection signal="pressed" from="Credits_expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
+[connection signal="pressed" from="Instructions Expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
+[connection signal="pressed" from="Introduction_Expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
+[connection signal="pressed" from="Introduction/Introduction_Button" to="." method="_on_introduction_button_pressed"]
+[connection signal="pressed" from="Credits_sprite/Credits_Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Normal_info_sprite/Normal Info Button" to="." method="_on_normal_info_button_pressed"]
+[connection signal="pressed" from="Normal_sprite/Begin Normal Mode Button" to="." method="_on_begin_normal_mode_button_pressed"]
