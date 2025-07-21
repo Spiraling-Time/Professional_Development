@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2brtg8to1jrf"]
+
+[ext_resource type="Texture2D" uid="uid://cpsykcwp62ikd" path="res://game_stuff/Assets/Professional Development_ 5 Stars (6).png" id="1_238h1"]
+
+[node name="Star_free_to_spawn" type="Sprite2D"]
+z_index = 3002
+z_as_relative = false
+texture = ExtResource("1_238h1")
