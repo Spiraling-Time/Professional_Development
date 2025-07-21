@@ -8,8 +8,6 @@ func _ready() -> void:
 	#save_start()
 	load_data_start()
 	if !started:
-		started = true
-		save_start()
 		_on_introduction_button_pressed()
 
 func save_start():
@@ -48,6 +46,12 @@ func _on_expanded_info_normal_pressed() -> void:
 	$Introduction_Expanded.visible = false
 	
 	show_em_all()
+	
+	if !started:
+		
+		started = true
+		save_start()
+		_on_instructions_button_pressed()
 
 func _on_normal_info_button_pressed() -> void:
 	$Normal_Info_expanded.visible = true
