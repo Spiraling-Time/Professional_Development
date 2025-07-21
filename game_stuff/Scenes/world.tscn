@@ -209,6 +209,7 @@ one_shot = true
 autostart = true
 
 [node name="Assassin_Spawner" type="Timer" parent="."]
+wait_time = 15.0
 one_shot = true
 autostart = true
 
