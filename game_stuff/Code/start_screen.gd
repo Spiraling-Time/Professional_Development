@@ -1,5 +1,26 @@
 extends Node2D
 
+var save_first_time = "user://variable.save_first_time"
+
+var started: bool = false
+
+func _ready() -> void:
+	#save_start()
+	load_data_start()
+	if !started:
+		started = true
+		save_start()
+		_on_introduction_button_pressed()
+
+func save_start():
+	var file = FileAccess.open(save_first_time, FileAccess.WRITE)
+	file.store_var(started)
+
+
+func load_data_start():
+	if FileAccess.file_exists(save_first_time):
+		var file = FileAccess.open(save_first_time, FileAccess.READ)
+		started = file.get_var()
 
 
 func _on_begin_normal_mode_button_pressed() -> void:
