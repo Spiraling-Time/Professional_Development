@@ -70,9 +70,9 @@ func spawn_role():
 	
 	var rand_spawn_place = randi_range(1,2)
 	if rand_spawn_place == 1:
-		new_role.global_position = Vector2(1100, randi_range(700, -700))
+		new_role.global_position = Vector2(1100, randi_range(700, -400))
 	elif rand_spawn_place == 2:
-		new_role.global_position = Vector2(-1100, randi_range(700, -700))
+		new_role.global_position = Vector2(-1100, randi_range(700, -400))
 		new_role.scale.x = -1
 
 	#new_role.global_position.x += randi_range(100,-100)
