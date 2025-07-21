@@ -32,8 +32,8 @@ var finalSCORE = 0
 
 func _ready() -> void:
 	randomize()
-	#save_everything()
-	load_everything()
+	#save_normal()
+	load_data_normal()
 	$Game_Time.start()
 	
 		
@@ -96,7 +96,6 @@ func _on_spawn_timer_timeout() -> void:
 	$Spawn_Timer.start()
 
 func end_of_round():
-	save_everything()
 	get_tree().paused = true
 	$"Final Score".visible = true
 	$Time_left.visible = false
@@ -158,7 +157,10 @@ func end_of_round():
 			self.add_child(newstar)
 		
 		finalSCORE = starSCORE + balancedSCORE + timeleftSCORE + spaceleftSCORE
-		
+		if finalSCORE > saved_normal_final_score:
+			save_normal()
+			load_data_normal()
+			$NEW_HIGH_SCORE.visible = true
 		for i in range(finalSCORE):
 			var newstar = star_free_to_spawn.instantiate()
 			newstar.position	 = Vector2(-102.0 + 10*i, 99.0)
@@ -180,18 +182,17 @@ func end_of_round():
 
 
 
-func save_everything():
-	save_normal()
-
-
-func load_everything():
-	load_data_normal()
+#func save_everything():
+	#save_normal()
+#
+#
+#func load_everything():
+	#load_data_normal()
 
 
 func save_normal():
-	if finalSCORE > saved_normal_final_score:
-		var file = FileAccess.open(save_path_normal_mode, FileAccess.WRITE)
-		file.store_var(finalSCORE)
+	var file = FileAccess.open(save_path_normal_mode, FileAccess.WRITE)
+	file.store_var(finalSCORE)
 
 
 func load_data_normal():
