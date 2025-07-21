@@ -240,3 +240,7 @@ func _on_assassin_spawner_timeout() -> void:
 	$Assassin_Spawner.wait_time = randi_range(20,25)
 
 	$Assassin_Spawner.start()
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	$AudioStreamPlayer2D.play()

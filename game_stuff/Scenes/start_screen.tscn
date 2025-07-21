@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3swa3ocb8kx1"]
+[gd_scene load_steps=13 format=3 uid="uid://c3swa3ocb8kx1"]
 
 [ext_resource type="Texture2D" uid="uid://cy48een1ok6b3" path="res://game_stuff/Assets/Background Sprite Sheet.png" id="1_7806l"]
 [ext_resource type="Script" uid="uid://de4n6mknouiwf" path="res://game_stuff/Code/start_screen.gd" id="1_q7a8b"]
@@ -6,14 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://bnf3n3rat2tmj" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 002.png" id="4_k2epy"]
 [ext_resource type="Texture2D" uid="uid://bbvlshgwmstkl" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 003.png" id="5_6a4jp"]
 [ext_resource type="Texture2D" uid="uid://cdljphew8867i" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 008.png" id="6_v1y14"]
-[ext_resource type="Texture2D" uid="uid://hpaycjw1v4nv" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 009.png" id="7_mbe0c"]
+[ext_resource type="Texture2D" uid="uid://dlhd2yx581wt" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 009.png" id="7_mbe0c"]
 [ext_resource type="Texture2D" uid="uid://v0jgpfjgrf6n" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 004.png" id="8_4ral8"]
 [ext_resource type="Texture2D" uid="uid://du22f1ue2ltnj" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 005.png" id="9_kolpa"]
 [ext_resource type="Texture2D" uid="uid://cdsd1mummgbak" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 006.png" id="10_82vcl"]
 [ext_resource type="Texture2D" uid="uid://c885bu63cidsb" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 007.png" id="11_b880k"]
+[ext_resource type="AudioStream" uid="uid://co2vkgx65jhxk" path="res://game_stuff/Sound/Music/spaceship-arcade-shooter-game-background-soundtrack-318508.mp3" id="12_b880k"]
 
 [node name="Start Screen" type="Node2D"]
 script = ExtResource("1_q7a8b")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_b880k")
+volume_db = -20.0
+autoplay = true
 
 [node name="Instructions" type="Sprite2D" parent="."]
 position = Vector2(0, -343)
@@ -174,6 +180,7 @@ grow_vertical = 2
 focus_mode = 0
 flat = true
 
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="pressed" from="Instructions/Instructions_Button" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="Normal_Info_expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
 [connection signal="pressed" from="Credits_expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]

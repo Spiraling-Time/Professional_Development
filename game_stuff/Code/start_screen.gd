@@ -83,3 +83,7 @@ func _on_introduction_button_pressed() -> void:
 	$Introduction_Expanded.visible = true
 	
 	hide_em_all()
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	$AudioStreamPlayer2D.play()
