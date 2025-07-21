@@ -6,3 +6,4 @@ You can play the game on itch.io in browser here https://spiraling-time.itch.io/
 
 Made for Hack Club's Summer of Making Game Jam
 
+<img width="4094" height="2140" alt="image" src="https://github.com/user-attachments/assets/d0035956-2aea-4404-958b-a375e5e6cdb8" />
