@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7badmr6ju781"
-path="res://.godot/imported/fan1spritesheet.png-176b53572061b2149510270da8bf5500.ctex"
+uid="uid://bie3n12i7t2eu"
+path="res://.godot/imported/Fan1 Sprite Sheet.png-b9f8c0086d601b9ba08d8c7ca20e67da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/Characters/fan1spritesheet.png"
-dest_files=["res://.godot/imported/fan1spritesheet.png-176b53572061b2149510270da8bf5500.ctex"]
+source_file="res://game_stuff/Assets/Characters/Fan1 Sprite Sheet.png"
+dest_files=["res://.godot/imported/Fan1 Sprite Sheet.png-b9f8c0086d601b9ba08d8c7ca20e67da.ctex"]
 
 [params]
 

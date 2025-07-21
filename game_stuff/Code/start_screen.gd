@@ -4,6 +4,8 @@ var save_first_time = "user://variable.save_first_time"
 
 var started: bool = false
 
+var counter_of_important_stuff = 0
+
 func _ready() -> void:
 	#save_start()
 	load_data_start()
@@ -48,10 +50,14 @@ func _on_expanded_info_normal_pressed() -> void:
 	show_em_all()
 	
 	if !started:
-		
-		started = true
-		save_start()
-		_on_instructions_button_pressed()
+		counter_of_important_stuff += 1
+		if counter_of_important_stuff == 1:
+			_on_instructions_button_pressed()
+		elif counter_of_important_stuff == 2:
+			started = true
+			save_start()
+			_on_normal_info_button_pressed()
+			
 
 func _on_normal_info_button_pressed() -> void:
 	$Normal_Info_expanded.visible = true

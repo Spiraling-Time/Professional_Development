@@ -10,6 +10,9 @@ var game_mode = "NORMAL"
 var star_free_to_spawn = preload("res://game_stuff/Scenes/star_free_to_spawn.tscn")
 
 var the_role = preload("res://game_stuff/Scenes/role.tscn")
+
+#var fan1 = preload()
+
 var available_roles: Array = ["Artist1", "Artist2", "Musician1", "Musician2", "Programmer1", "Programmer2", "Playtester1", "Playtester2"]
 
 var available_stars: Array = [4, 3, 3, 2, 2, 1, 1, 0, 0, 0]
@@ -87,11 +90,6 @@ func _on_game_time_timeout() -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	if number_of_guys_on_map < max_guys: spawn_role()
-	#var repeat = 0
-	#while repeat <4:
-		#if number_of_guys_on_map < max_guys:
-			#spawn_role()
-		#repeat +=1
 	$Spawn_Timer.wait_time = randi_range(10,30)/10
 	$Spawn_Timer.start()
 
