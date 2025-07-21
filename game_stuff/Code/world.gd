@@ -11,7 +11,9 @@ var star_free_to_spawn = preload("res://game_stuff/Scenes/star_free_to_spawn.tsc
 
 var the_role = preload("res://game_stuff/Scenes/role.tscn")
 
-#var fan1 = preload()
+var fan1 = preload("res://game_stuff/Scenes/fan_1.tscn")
+
+var assassin1 = preload("res://game_stuff/Scenes/Assassin.tscn")
 
 var available_roles: Array = ["Artist1", "Artist2", "Musician1", "Musician2", "Programmer1", "Programmer2", "Playtester1", "Playtester2"]
 
@@ -26,6 +28,8 @@ var spaces = 10
 var number_of_celebraters = 0
 
 var celebraters: Array = []
+
+var assassinated: bool = false
 
 var starSCORE = 0
 var balancedSCORE = 0
@@ -97,6 +101,7 @@ func end_of_round():
 	get_tree().paused = true
 	$"Final Score".visible = true
 	$Time_left.visible = false
+	if assassinated: $ASSASSINATED.visible = true
 	var arts = 0
 	var musis = 0
 	var progs = 0
@@ -153,8 +158,8 @@ func end_of_round():
 			var newstar = star_free_to_spawn.instantiate()
 			newstar.position	 = Vector2(-216.0 + 10*i, -30.0)
 			self.add_child(newstar)
-		
-		finalSCORE = starSCORE + balancedSCORE + timeleftSCORE + spaceleftSCORE
+		if !assassinated: finalSCORE = starSCORE + balancedSCORE + timeleftSCORE + spaceleftSCORE
+		else: finalSCORE = starSCORE
 		if finalSCORE > saved_normal_final_score:
 			save_normal()
 			load_data_normal()
@@ -197,3 +202,41 @@ func load_data_normal():
 	if FileAccess.file_exists(save_path_normal_mode):
 		var file = FileAccess.open(save_path_normal_mode, FileAccess.READ)
 		saved_normal_final_score = file.get_var()
+
+
+func _on_fan_spawner_timeout() -> void:
+	var new_fan = fan1.instantiate()
+	var rand_spawn_place = randi_range(1,2)
+	if rand_spawn_place == 1:
+		new_fan.global_position = Vector2(1100, randi_range(700, -400))
+	elif rand_spawn_place == 2:
+		new_fan.global_position = Vector2(-1100, randi_range(700, -400))
+		new_fan.scale.x = -1
+
+	#new_role.global_position.x += randi_range(100,-100)
+	$Spawner.add_child(new_fan)
+	number_of_guys_on_map += 1
+
+
+	$Fan_Spawner.wait_time = randi_range(10,30)
+
+	$Fan_Spawner.start()
+
+
+func _on_assassin_spawner_timeout() -> void:
+	var new_assassin = assassin1.instantiate()
+	var rand_spawn_place = randi_range(1,2)
+	if rand_spawn_place == 1:
+		new_assassin.global_position = Vector2(1100, randi_range(700, -400))
+	elif rand_spawn_place == 2:
+		new_assassin.global_position = Vector2(-1100, randi_range(700, -400))
+		new_assassin.scale.x = -1
+
+	#new_role.global_position.x += randi_range(100,-100)
+	$Spawner.add_child(new_assassin)
+	number_of_guys_on_map += 1
+
+
+	$Assassin_Spawner.wait_time = randi_range(20,25)
+
+	$Assassin_Spawner.start()

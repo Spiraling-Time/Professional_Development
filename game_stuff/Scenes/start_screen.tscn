@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://de4n6mknouiwf" path="res://game_stuff/Code/start_screen.gd" id="1_q7a8b"]
 [ext_resource type="Texture2D" uid="uid://dgp05juadrr7s" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 001.png" id="3_mhc1d"]
 [ext_resource type="Texture2D" uid="uid://bnf3n3rat2tmj" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 002.png" id="4_k2epy"]
-[ext_resource type="Texture2D" uid="uid://3pmapiv7bn56" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 003.png" id="5_6a4jp"]
+[ext_resource type="Texture2D" uid="uid://bbvlshgwmstkl" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 003.png" id="5_6a4jp"]
 [ext_resource type="Texture2D" uid="uid://cdljphew8867i" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 008.png" id="6_v1y14"]
 [ext_resource type="Texture2D" uid="uid://hpaycjw1v4nv" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 009.png" id="7_mbe0c"]
 [ext_resource type="Texture2D" uid="uid://v0jgpfjgrf6n" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 004.png" id="8_4ral8"]
-[ext_resource type="Texture2D" uid="uid://bf23fgo2lf7ol" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 005.png" id="9_kolpa"]
+[ext_resource type="Texture2D" uid="uid://du22f1ue2ltnj" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 005.png" id="9_kolpa"]
 [ext_resource type="Texture2D" uid="uid://cdsd1mummgbak" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 006.png" id="10_82vcl"]
-[ext_resource type="Texture2D" uid="uid://dc8yuyxmp1404" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 007.png" id="11_b880k"]
+[ext_resource type="Texture2D" uid="uid://c885bu63cidsb" path="res://game_stuff/Assets/buttonstuff/Buttons and stuff 007.png" id="11_b880k"]
 
 [node name="Start Screen" type="Node2D"]
 script = ExtResource("1_q7a8b")

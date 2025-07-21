@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwkkknsbystxb"]
+[gd_scene load_steps=12 format=3 uid="uid://5ysx3ejkxmy8"]
 
-[ext_resource type="Script" uid="uid://bhueiya2n2gnc" path="res://game_stuff/Code/fan_1.gd" id="1_1u1xs"]
-[ext_resource type="Texture2D" uid="uid://bie3n12i7t2eu" path="res://game_stuff/Assets/Characters/Fan1 Sprite Sheet.png" id="2_1u1xs"]
-[ext_resource type="PackedScene" uid="uid://bj2inndrlfv5o" path="res://game_stuff/Scenes/stars.tscn" id="3_thxo3"]
+[ext_resource type="Script" uid="uid://b5hwgqxekm3d0" path="res://game_stuff/Code/assassin.gd" id="1_4dyou"]
+[ext_resource type="Texture2D" uid="uid://bglipf0ixb1ny" path="res://game_stuff/Assets/Characters/Assassin Sprite Sheet.png" id="2_4dyou"]
+[ext_resource type="PackedScene" uid="uid://bj2inndrlfv5o" path="res://game_stuff/Scenes/stars.tscn" id="3_1ggi1"]
+[ext_resource type="Texture2D" uid="uid://c2ly12ivfduth" path="res://game_stuff/Assets/Professional Development_ QUESTIONMARK.png" id="4_4dyou"]
 
 [sub_resource type="Animation" id="Animation_thxo3"]
 resource_name = "Happy"
@@ -15,10 +16,24 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [4, 5, 4]
+"values": [4, 5]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"assassinate"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_xanpx"]
@@ -98,13 +113,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1xs"]
 size = Vector2(48, 67)
 
-[node name="Fan1" type="CharacterBody2D"]
+[node name="Assassin" type="CharacterBody2D"]
 collision_layer = 6
 collision_mask = 0
-script = ExtResource("1_1u1xs")
+script = ExtResource("1_4dyou")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1u1xs")
+texture = ExtResource("2_4dyou")
 vframes = 8
 frame = 1
 
@@ -117,7 +132,8 @@ libraries = {
 position = Vector2(2, 17.5)
 shape = SubResource("RectangleShape2D_1u1xs")
 
-[node name="Stars" parent="." instance=ExtResource("3_thxo3")]
+[node name="Stars" parent="." instance=ExtResource("3_1ggi1")]
 z_index = 2
 position = Vector2(0, -101)
-frame = 5
+texture = ExtResource("4_4dyou")
+vframes = 1

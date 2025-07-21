@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbqwug5lves1e"]
+[gd_scene load_steps=14 format=3 uid="uid://dbqwug5lves1e"]
 
 [ext_resource type="Script" uid="uid://cpj5ue57qdbw2" path="res://game_stuff/Code/world.gd" id="1_2jibd"]
 [ext_resource type="PackedScene" uid="uid://dwy1xy6m2vd8r" path="res://game_stuff/Scenes/kyle.tscn" id="1_51tv8"]
@@ -21,10 +21,16 @@ radius = 190.0
 font_size = 20
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_cv7es"]
+[sub_resource type="LabelSettings" id="LabelSettings_5wt4a"]
 font_size = 25
-font_color = Color(1, 1, 0, 1)
-outline_size = 10
+font_color = Color(0.886275, 1, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_625m0"]
+font_size = 25
+font_color = Color(0.887801, 3.77826e-06, 1.05888e-06, 1)
+outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="World" type="Node2D"]
@@ -159,7 +165,25 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.606661
 text = "NEW HIGH SCORE!!!"
-label_settings = SubResource("LabelSettings_cv7es")
+label_settings = SubResource("LabelSettings_5wt4a")
+
+[node name="ASSASSINATED" type="Label" parent="."]
+visible = false
+z_index = 3002
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = 35.0
+offset_right = -79.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.859259
+text = "ASSASSINATED!!!"
+label_settings = SubResource("LabelSettings_625m0")
 
 [node name="End_round" type="Button" parent="."]
 process_mode = 2
@@ -173,7 +197,18 @@ focus_mode = 0
 flat = true
 script = ExtResource("8_cv7es")
 
+[node name="Fan_Spawner" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Assassin_Spawner" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="OnTheTeam" to="." method="_on_on_the_team_body_entered"]
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="Game_Time" to="." method="_on_game_time_timeout"]
 [connection signal="pressed" from="End_round" to="End_round" method="_on_pressed"]
+[connection signal="timeout" from="Fan_Spawner" to="." method="_on_fan_spawner_timeout"]
+[connection signal="timeout" from="Assassin_Spawner" to="." method="_on_assassin_spawner_timeout"]

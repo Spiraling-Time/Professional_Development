@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c885bu63cidsb"
-path="res://.godot/imported/Buttons and stuff 007.png-f748ab7a036277a6282e6d16b5cadd78.ctex"
+uid="uid://bglipf0ixb1ny"
+path="res://.godot/imported/Assassin Sprite Sheet.png-640b9f0b29da63050119a6f4a144f03c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_stuff/Assets/buttonstuff/Buttons and stuff 007.png"
-dest_files=["res://.godot/imported/Buttons and stuff 007.png-f748ab7a036277a6282e6d16b5cadd78.ctex"]
+source_file="res://game_stuff/Assets/Characters/Assassin Sprite Sheet.png"
+dest_files=["res://.godot/imported/Assassin Sprite Sheet.png-640b9f0b29da63050119a6f4a144f03c.ctex"]
 
 [params]
 

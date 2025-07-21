@@ -22,7 +22,12 @@ var locked_in: bool = false
 func _ready() -> void:
 	set_z_index(base_Z_Index)
 
+
 func _physics_process(delta: float) -> void:
+	if ! role:
+		if type_of_person == "FAN1":
+			speed -=1
+			if speed <= 100: speed = randi_range(145,155)
 	Z_Indexing()
 	if self in $"../../Wave".get_overlapping_bodies():
 		if mode == "RETREAT":
@@ -48,6 +53,9 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 	elif mode == "RUN":
+		if !role:
+			if type_of_person == "FAN1": speed += 2
+			else: speed += .1
 		#if type_of_person = "FAN1"
 		$AnimationPlayer.play("Run")
 		dir = ($"../../Kyle".global_position-global_position).normalized()
@@ -57,21 +65,23 @@ func _physics_process(delta: float) -> void:
 	elif mode == "RETREAT":
 		$AnimationPlayer.play("Retreat")
 		dir = (global_position-$"../../Kyle".global_position).normalized()
-		if role:
-			velocity = dir*speed/5
-			move_and_slide()
+		if !type_of_person == "Assassin": velocity = dir*speed/5
+		else: velocity = dir*speed/2
+		move_and_slide()
 		
 	elif mode == "CELEBRATE":
+		if type_of_person == "Assassin":
+			$Stars.texture = null
 		$AnimationPlayer.play("Celebrate")
 
 	
-	if role:
-		if self in $"../../Cursor".get_overlapping_bodies():
-			$Stars.visible = true
-			$Icon.visible = true
-		else:
-			$Stars.visible = false
-			$Icon.visible = false
+	
+	if self in $"../../Cursor".get_overlapping_bodies():
+		$Stars.visible = true
+		if role: $Icon.visible = true
+	else:
+		$Stars.visible = false
+		if role: $Icon.visible = false
 	if global_position.y < -715.0 or global_position.y > 715.0 or global_position.x < -1260.0 or global_position.x > 1260.0:
 		delete_self()
 
@@ -98,3 +108,7 @@ func get_ready_to_run():
 func turn_around():
 	if scale.x == 1: scale.x = -1
 	else: scale.x = 1
+
+func assassinate():
+	$"../..".assassinated = true
+	$"../..".end_of_round()
