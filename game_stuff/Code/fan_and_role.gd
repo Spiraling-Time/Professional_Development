@@ -70,18 +70,21 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		
 	elif mode == "CELEBRATE":
-		if type_of_person == "Assassin":
-			$Stars.texture = null
+
 		$AnimationPlayer.play("Celebrate")
 
 	
 	
 	if self in $"../../Cursor".get_overlapping_bodies():
-		$Stars.visible = true
-		if role: $Icon.visible = true
+		if type_of_person != "Assassin":
+			$Stars.visible = true
+			if role: $Icon.visible = true
 	else:
-		$Stars.visible = false
-		if role: $Icon.visible = false
+		if type_of_person != "Assassin":
+			$Stars.visible = false
+			if role: $Icon.visible = false
+
+	
 	if global_position.y < -715.0 or global_position.y > 715.0 or global_position.x < -1260.0 or global_position.x > 1260.0:
 		delete_self()
 
@@ -109,6 +112,8 @@ func turn_around():
 	if scale.x == 1: scale.x = -1
 	else: scale.x = 1
 
+	
+	
 func assassinate():
 	$"../..".assassinated = true
 	$"../..".end_of_round()

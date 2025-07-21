@@ -1,9 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://5ysx3ejkxmy8"]
+[gd_scene load_steps=10 format=3 uid="uid://5ysx3ejkxmy8"]
 
 [ext_resource type="Script" uid="uid://b5hwgqxekm3d0" path="res://game_stuff/Code/assassin.gd" id="1_4dyou"]
 [ext_resource type="Texture2D" uid="uid://bglipf0ixb1ny" path="res://game_stuff/Assets/Characters/Assassin Sprite Sheet.png" id="2_4dyou"]
-[ext_resource type="PackedScene" uid="uid://bj2inndrlfv5o" path="res://game_stuff/Scenes/stars.tscn" id="3_1ggi1"]
-[ext_resource type="Texture2D" uid="uid://c2ly12ivfduth" path="res://game_stuff/Assets/Professional Development_ QUESTIONMARK.png" id="4_4dyou"]
 
 [sub_resource type="Animation" id="Animation_thxo3"]
 resource_name = "Happy"
@@ -111,7 +109,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1xs"]
-size = Vector2(48, 67)
+size = Vector2(65, 123)
 
 [node name="Assassin" type="CharacterBody2D"]
 collision_layer = 6
@@ -129,11 +127,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 17.5)
+position = Vector2(7.5, 17.5)
 shape = SubResource("RectangleShape2D_1u1xs")
-
-[node name="Stars" parent="." instance=ExtResource("3_1ggi1")]
-z_index = 2
-position = Vector2(0, -101)
-texture = ExtResource("4_4dyou")
-vframes = 1
