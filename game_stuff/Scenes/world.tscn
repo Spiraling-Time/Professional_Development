@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cr8dqiw7a6ve5" path="res://game_stuff/Scenes/body_guard_orbit.tscn" id="2_51tv8"]
 [ext_resource type="PackedScene" uid="uid://dje3s4yrrmqwy" path="res://game_stuff/Scenes/cursor.tscn" id="4_2jibd"]
 [ext_resource type="Texture2D" uid="uid://cy48een1ok6b3" path="res://game_stuff/Assets/Background Sprite Sheet.png" id="5_yya4n"]
-[ext_resource type="Texture2D" uid="uid://bipyweaq2ef7f" path="res://game_stuff/Assets/Score stuff/Professional Development Score 001.png" id="7_5wt4a"]
+[ext_resource type="Texture2D" uid="uid://c4hl2v03owxpr" path="res://game_stuff/Assets/Score stuff/Professional Development Score 001.png" id="7_5wt4a"]
 [ext_resource type="Texture2D" uid="uid://4ysl5prdo33u" path="res://game_stuff/Assets/Professional Development_ 5 Stars Sprite Sheet.png" id="7_210hi"]
 [ext_resource type="Script" uid="uid://cwx40vakjdr7w" path="res://game_stuff/Code/end_round.gd" id="8_cv7es"]
 
