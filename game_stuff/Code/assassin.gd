@@ -4,6 +4,6 @@ func _ready() -> void:
 	type_of_person = "Assassin"
 	role = false
 	mode = "RUN"
-	max_speed = randi_range(50,70)
+	max_speed = randi_range(70,100)
 	speed = max_speed
 	dir = Vector2.ZERO

@@ -14,58 +14,26 @@
 [ext_resource type="AudioStream" uid="uid://co2vkgx65jhxk" path="res://game_stuff/Sound/Music/spaceship-arcade-shooter-game-background-soundtrack-318508.mp3" id="12_b880k"]
 
 [node name="Start Screen" type="Node2D"]
+position = Vector2(0, 131)
 script = ExtResource("1_q7a8b")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_b880k")
-volume_db = -20.0
-autoplay = true
-
-[node name="Instructions" type="Sprite2D" parent="."]
-position = Vector2(0, -343)
-texture = ExtResource("8_4ral8")
-
-[node name="Instructions_Button" type="Button" parent="Instructions"]
-z_index = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -600.0
-offset_top = -338.0
-offset_right = -360.0
-offset_bottom = -203.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-flat = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -3
 texture = ExtResource("1_7806l")
 vframes = 2
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_b880k")
+volume_db = -20.0
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Normal_Info_expanded" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("5_6a4jp")
 
 [node name="Expanded Info Normal" type="Button" parent="Normal_Info_expanded"]
-z_index = 1
-offset_left = -398.0
-offset_top = -235.0
-offset_right = 398.0
-offset_bottom = 236.0
-focus_mode = 0
-flat = true
-
-[node name="Credits_expanded" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("7_mbe0c")
-
-[node name="Expanded Info Normal" type="Button" parent="Credits_expanded"]
 z_index = 1
 offset_left = -398.0
 offset_top = -235.0
@@ -87,6 +55,19 @@ offset_bottom = 236.0
 focus_mode = 0
 flat = true
 
+[node name="Credits_expanded" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("7_mbe0c")
+
+[node name="Expanded Info Normal" type="Button" parent="Credits_expanded"]
+z_index = 1
+offset_left = -398.0
+offset_top = -235.0
+offset_right = 398.0
+offset_bottom = 236.0
+focus_mode = 0
+flat = true
+
 [node name="Introduction_Expanded" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("11_b880k")
@@ -100,8 +81,28 @@ offset_bottom = 236.0
 focus_mode = 0
 flat = true
 
+[node name="Instructions" type="Sprite2D" parent="."]
+position = Vector2(0, -443.5)
+texture = ExtResource("8_4ral8")
+
+[node name="Instructions_Button" type="Button" parent="Instructions"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -338.0
+offset_right = -360.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
 [node name="Introduction" type="Sprite2D" parent="."]
-position = Vector2(0, -343)
+position = Vector2(0, 224.5)
 texture = ExtResource("10_82vcl")
 
 [node name="Introduction_Button" type="Button" parent="Introduction"]
@@ -121,7 +122,7 @@ focus_mode = 0
 flat = true
 
 [node name="Credits_sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 325)
+position = Vector2(0, 447)
 texture = ExtResource("6_v1y14")
 
 [node name="Credits_Button" type="Button" parent="Credits_sprite"]
@@ -141,7 +142,7 @@ focus_mode = 0
 flat = true
 
 [node name="Normal_info_sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -120)
+position = Vector2(0, -221)
 texture = ExtResource("4_k2epy")
 
 [node name="Normal Info Button" type="Button" parent="Normal_info_sprite"]
@@ -161,7 +162,7 @@ focus_mode = 0
 flat = true
 
 [node name="Normal_sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 102.5)
+position = Vector2(0, 2)
 texture = ExtResource("3_mhc1d")
 
 [node name="Begin Normal Mode Button" type="Button" parent="Normal_sprite"]
@@ -181,11 +182,11 @@ focus_mode = 0
 flat = true
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
-[connection signal="pressed" from="Instructions/Instructions_Button" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="Normal_Info_expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
-[connection signal="pressed" from="Credits_expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
 [connection signal="pressed" from="Instructions Expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
+[connection signal="pressed" from="Credits_expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
 [connection signal="pressed" from="Introduction_Expanded/Expanded Info Normal" to="." method="_on_expanded_info_normal_pressed"]
+[connection signal="pressed" from="Instructions/Instructions_Button" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="Introduction/Introduction_Button" to="." method="_on_introduction_button_pressed"]
 [connection signal="pressed" from="Credits_sprite/Credits_Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Normal_info_sprite/Normal Info Button" to="." method="_on_normal_info_button_pressed"]

@@ -156,7 +156,7 @@ func end_of_round():
 		
 		for i in range(starSCORE):
 			var newstar = star_free_to_spawn.instantiate()
-			newstar.position	 = Vector2(-216.0 + 10*i, -30.0)
+			newstar.position	 = Vector2(-211.0 + 10*i, -126.0)
 			self.add_child(newstar)
 		if !assassinated: finalSCORE = starSCORE + balancedSCORE + timeleftSCORE + spaceleftSCORE
 		else: finalSCORE = starSCORE
@@ -166,14 +166,14 @@ func end_of_round():
 			$NEW_HIGH_SCORE.visible = true
 		for i in range(finalSCORE):
 			var newstar = star_free_to_spawn.instantiate()
-			newstar.position	 = Vector2(-102.0 + 10*i, 99.0)
+			newstar.position	 = Vector2(-126.0 + 10*i, 98.0)
 			self.add_child(newstar)
 		
 		$FINAL_SCORE.text = "%d" % finalSCORE
 		
 		for i in range(saved_normal_final_score):
 			var newstar = star_free_to_spawn.instantiate()
-			newstar.position	 = Vector2(-102.0 + 10*i, 165.0)
+			newstar.position	 = Vector2(-126.0 + 10*i, 163.0)
 			self.add_child(newstar)
 		$HIGH_SCORE.text = "%d" % saved_normal_final_score
 				
@@ -237,7 +237,7 @@ func _on_assassin_spawner_timeout() -> void:
 	number_of_guys_on_map += 1
 
 
-	$Assassin_Spawner.wait_time = randi_range(20,25)
+	$Assassin_Spawner.wait_time = randi_range(7,15)
 
 	$Assassin_Spawner.start()
 
