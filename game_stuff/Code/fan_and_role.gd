@@ -19,6 +19,8 @@ var ready_to_run: bool = true
 
 var locked_in: bool = false
 
+var SUPRISE: bool = false
+
 func _ready() -> void:
 	set_z_index(base_Z_Index)
 
@@ -28,6 +30,15 @@ func _physics_process(delta: float) -> void:
 		if type_of_person == "FAN1":
 			speed -=1
 			if speed <= 100: speed = randi_range(145,155)
+		elif type_of_person == "Assassin":
+			if global_position.distance_to($"../../Kyle".global_position) < distance_before_chill:
+				$Sprite2D.texture = load("res://game_stuff/Assets/Characters/Assassin Sprite Sheet.png")
+				var theshape = RectangleShape2D.new()
+				theshape.size = Vector2(65.0, 123.0)
+				$CollisionShape2D.shape = theshape
+				$CollisionShape2D.position = Vector2(7.5, 17.5)
+		
+		
 	Z_Indexing()
 	if self in $"../../Wave".get_overlapping_bodies():
 		if mode == "RETREAT":
@@ -47,12 +58,15 @@ func _physics_process(delta: float) -> void:
 			elif dir.x <5 and dir.x >-5:
 				locked_in = true
 				dir.x = ($"../../Kyle".global_position-global_position).normalized().x
+
+
 		else: dir.y = 0
 	
 		velocity = dir*speed
 		move_and_slide()
 
 	elif mode == "RUN":
+		locked_in = false
 		if !role:
 			if type_of_person == "FAN1": speed += 2
 			else: speed += .1

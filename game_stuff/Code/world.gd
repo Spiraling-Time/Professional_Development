@@ -42,7 +42,10 @@ func _ready() -> void:
 	#save_normal()
 	load_data_normal()
 	$Game_Time.start()
-	
+	$Fan_Spawner.wait_time= randi_range(1,3)
+	$Fan_Spawner.start()
+	$Assassin_Spawner.wait_time= randi_range(10,15)
+	$Assassin_Spawner.start()
 		
 func _physics_process(delta: float) -> void:
 	$Time_left.text = "%d" % $Game_Time.time_left
